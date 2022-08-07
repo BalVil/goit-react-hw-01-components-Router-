@@ -12,7 +12,7 @@ import {
   Quantity,
 } from './Profile.styled';
 
-export const UserProfile = ({
+const UserProfile = ({
   username,
   tag,
   location,
@@ -44,6 +44,7 @@ export const UserProfile = ({
     </UserWrapper>
   );
 };
+export default UserProfile;
 
 UserProfile.propTypes = {
   username: PropTypes.string.isRequired,

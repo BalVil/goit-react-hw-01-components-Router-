@@ -6,7 +6,6 @@ export const GlobalStyle = createGlobalStyle`
   --color-white: #ffffff;
   --color-black: #010101;
   --color-primery-text: #82909e;
-  --background-color: #e1e7ee;
   --background-color-primery: #f3f6f9;
   --background-color-secondary: #10c0d9;
   --shadow-color-primery: rgba(0, 0, 0, 0.2) 0px 2px 3px;
@@ -26,13 +25,6 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
-
-a {
-  color: var(--color-black);
-  text-decoration: none;
-  font-weight: inherit;
-  font-size: 12px;
 }
 
 h1,

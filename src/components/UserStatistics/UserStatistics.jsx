@@ -5,9 +5,9 @@ import {
   List,
   ListItem,
   ItemLabel,
-} from './Statistics.styled';
+} from './UserStatistics.styled';
 
-export const UserStatistics = ({ title, stats }) => {
+const UserStatistics = ({ title, stats }) => {
   return (
     <Statistics>
       {title && <Title>{title}</Title>}
@@ -25,6 +25,8 @@ export const UserStatistics = ({ title, stats }) => {
     </Statistics>
   );
 };
+export default UserStatistics;
+
 UserStatistics.propTypes = {
   title: PropTypes.string,
   stats: PropTypes.arrayOf(
