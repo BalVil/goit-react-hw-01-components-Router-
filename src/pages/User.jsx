@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import user from 'data/user.json';
 import UserProfile from 'components/Profile/Profile';
@@ -23,7 +24,9 @@ const User = () => {
         subTitle={subTitle}
         userLocation={{ from: '/userprofile' }}
       />
-      <Outlet />
+      <Suspense fallback={<h3>Loading...</h3>}>
+        <Outlet />
+      </Suspense>
     </>
   );
 };

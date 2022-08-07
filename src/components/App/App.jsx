@@ -1,12 +1,14 @@
+import { lazy } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { GlobalStyle } from 'components/GlobalStyle';
 import { Wrapper } from './App.styled';
 import SharedLayout from 'components/SharedLayout/SharedLayout';
-import Home from 'pages/Home';
-import User from 'pages/User';
-import Statistics from 'pages/Statistics';
-import Friends from 'pages/Friends';
-import Transactions from 'pages/Transactions';
+
+const Home = lazy(() => import('pages/Home'));
+const User = lazy(() => import('pages/User'));
+const Statistics = lazy(() => import('pages/Statistics'));
+const Friends = lazy(() => import('pages/Friends'));
+const Transactions = lazy(() => import('pages/Transactions'));
 
 const App = () => {
   return (
