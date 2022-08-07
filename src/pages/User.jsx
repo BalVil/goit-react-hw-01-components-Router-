@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import user from 'data/user.json';
 import UserProfile from 'components/Profile/Profile';
 import Additional from 'components/Additional/Additional';
@@ -8,6 +8,11 @@ const User = () => {
   const linkText = 'statistics';
   const hideLinkText = 'Hide statistics';
   const subTitle = 'Additional information';
+
+  const location = useLocation();
+  console.log(location.state);
+
+  const pathStat = location.pathname === '/userprofile/statistics';
 
   return (
     <>
@@ -22,7 +27,8 @@ const User = () => {
         linkText={linkText}
         hideLinkText={hideLinkText}
         subTitle={subTitle}
-        userLocation={{ from: '/userprofile' }}
+        userPath={'/userprofile'}
+        pathStat={pathStat}
       />
       <Suspense fallback={<h3>Loading...</h3>}>
         <Outlet />

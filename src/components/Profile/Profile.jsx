@@ -15,7 +15,7 @@ import {
 const UserProfile = ({
   username,
   tag,
-  location,
+  userLocation,
   avatar,
   stats: { followers, views, likes },
 }) => {
@@ -25,7 +25,7 @@ const UserProfile = ({
         <UserAvatar src={avatar} alt="User avatar" />
         <Username>{username}</Username>
         <Usertag>@{tag}</Usertag>
-        <UserLocation>{location}</UserLocation>
+        <UserLocation>{userLocation}</UserLocation>
       </UserDescription>
       <Stats>
         <StatsItem>

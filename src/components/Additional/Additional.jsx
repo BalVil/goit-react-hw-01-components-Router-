@@ -1,17 +1,17 @@
 import PropTypes from 'prop-types';
 import { AdditionalWrap, StatLink } from './Additional.styled';
 
-import { useLocation } from 'react-router-dom';
-
-const Additional = ({ linkText, hideLinkText, subTitle, userLocation }) => {
-  const location = useLocation();
-
-  const path = location.pathname === '/userprofile/statistics';
-
+const Additional = ({
+  linkText,
+  hideLinkText,
+  subTitle,
+  userPath,
+  pathStat,
+}) => {
   return (
     <AdditionalWrap>
-      {path ? (
-        <StatLink to={userLocation.from}>{hideLinkText}</StatLink>
+      {pathStat ? (
+        <StatLink to={userPath}>{hideLinkText}</StatLink>
       ) : (
         <StatLink to={linkText}>{subTitle}</StatLink>
       )}
@@ -22,6 +22,8 @@ export default Additional;
 
 Additional.propTypes = {
   linkText: PropTypes.string.isRequired,
+  hideLinkText: PropTypes.string.isRequired,
   subTitle: PropTypes.string.isRequired,
-  userLocation: PropTypes.object.isRequired,
+  userPath: PropTypes.string.isRequired,
+  pathStat: PropTypes.bool.isRequired,
 };
