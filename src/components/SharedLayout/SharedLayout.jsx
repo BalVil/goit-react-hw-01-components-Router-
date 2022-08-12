@@ -20,3 +20,6 @@ const SharedLayout = () => {
   );
 };
 export default SharedLayout;
+
+//  щоб був state у pages треба додати const location = useLocation()
+// та прописати state = {{ from: location }} на потрібних Link
